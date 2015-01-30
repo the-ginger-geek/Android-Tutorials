@@ -15,7 +15,7 @@ public class MockDataGeneratorUtility {
 
     private static final int TOTAL_MOCK_COUNT = 15;
 
-    public static List<String> generateMockDataArray(Context context) {
+    public static List<String> generateMockDataList(Context context) {
         List<String> mockDataEntityArray = new ArrayList<>();
 
         for (int i = 0; i < TOTAL_MOCK_COUNT; i++) {

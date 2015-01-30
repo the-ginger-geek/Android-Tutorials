@@ -6,6 +6,31 @@
     android:orientation="vertical"
     android:background="@color/grey_300"
     android:layout_gravity="left|start"
+    android:clickable="true"
     android:fitsSystemWindows="true">
+
+    <TextView
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        style="@style/TextAppearance.AppCompat.Title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="@string/app_about_title"/>
+
+    <TextView
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:textSize="16sp"
+        android:text="@string/app_about"/>
+
+    <TextView
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:textSize="14sp"
+        android:text="@string/app_version"/>
 
 </LinearLayout>

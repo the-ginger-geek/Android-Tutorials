@@ -65,7 +65,7 @@ public class RecyclerFragment extends Fragment {
     }
 
     private void initializeRecyclerAdapter() {
-        adapter = new RecyclerDemoAdapter(MockDataGeneratorUtility.generateMockDataArray(getActivity()), recyclerViewOnItemClickListener);
+        adapter = new RecyclerDemoAdapter(MockDataGeneratorUtility.generateMockDataList(getActivity()), recyclerViewOnItemClickListener);
     }
 
     private RecyclerViewOnItemClickListener recyclerViewOnItemClickListener = new RecyclerViewOnItemClickListener() {

@@ -9,6 +9,8 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 
 import com.helieu.androidtutorials.recyclerview.RecyclerFragment;
 
@@ -76,8 +78,19 @@ public class MainActivity extends ActionBarActivity {
 
         drawerToggle = new ActionBarDrawerToggle(
                 this, drawerLayout, toolbar,
-                R.string.navigation_drawer_open, R.string.navigation_drawer_close
-        );
+                R.string.navigation_drawer_open, R.string.navigation_drawer_close) {
+            @Override
+            public void onDrawerClosed(View view) {
+                super.onDrawerClosed(view);
+                toggleFAB(true);
+            }
+
+            @Override
+            public void onDrawerOpened(View drawerView) {
+                super.onDrawerOpened(drawerView);
+                toggleFAB(false);
+            }
+        };
 
         drawerLayout.setDrawerListener(drawerToggle);
     }
@@ -90,6 +103,33 @@ public class MainActivity extends ActionBarActivity {
         fragmentManager.beginTransaction()
                 .replace(R.id.contentFrame, frag)
                 .commit();
+    }
+
+    private void toggleFAB(boolean setVisible) {
+        Animation animation = AnimationUtils.loadAnimation(this, (setVisible) ? R.anim.grow_fade_in : R.anim.shrink_fade_out);
+        View button = findViewById(R.id.addActionButton);
+
+        if (setVisible) {
+            button.setVisibility(View.VISIBLE);
+            button.startAnimation(animation);
+        } else {
+            setAnimationListener(button, animation);
+        }
+    }
+
+    private void setAnimationListener(final View button, final Animation animation) {
+        animation.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {}
+            @Override
+            public void onAnimationRepeat(Animation animation) {}
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                button.setVisibility(View.INVISIBLE);
+            }
+        });
+
+        button.startAnimation(animation);
     }
 
     private void setupFABClickableAction() {
