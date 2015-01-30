@@ -1,0 +1,43 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/cyan_500</item>
+        <item name="colorPrimaryDark">@color/cyan_700</item>
+        <item name="colorAccent">@color/amber_500</item>
+    </style>
+
+    <style name="MainActivityTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/cyan_500</item>
+        <item name="colorPrimaryDark">@color/cyan_700</item>
+        <item name="colorAccent">@color/amber_500</item>
+        <item name="windowActionBar">false</item>
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+    </style>
+
+    <style name="DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">@android:color/white</item>
+    </style>
+
+    <style name="InputDialog">
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+        <item name="android:background">@drawable/dialog_background</item>
+    </style>
+
+    <style name="DialogSaveButton">
+        <item name="android:text">@string/dialog_save</item>
+        <item name="android:textColor">@color/blue_500</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:background">@drawable/button_ripple</item>
+    </style>
+
+    <style name="DialogCancelButton">
+        <item name="android:text">@string/dialog_cancel</item>
+        <item name="android:textColor">@color/blue_500</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:background">@drawable/button_ripple</item>
+    </style>
+</resources>

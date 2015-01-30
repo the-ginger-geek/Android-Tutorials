@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">RecyclerView Tutorial</string>
+
+    <string name="navigation_drawer_open">Open</string>
+    <string name="navigation_drawer_close">Open</string>
+
+    <string name="lorem_ipsum_short">
+        Lorem ipsum dolor sit amet, te nec cetero denique elaboraret, electram inciderint
+        quo in. Eirmod singulis torquatos ne qui. Exerci consul regione vel in, mel an congue
+        efficiantur, oblique nominavi laboramus id nec. Id est graecis consequat adolescens, nec
+        at sumo copiosae. Cu dolorum alienum his. Mea accusam omittam scaevola.
+    </string>
+
+    <string name="lorem_ipsum_long">
+        Lorem ipsum dolor sit amet, te nec cetero denique elaboraret, electram inciderint
+        quo in. Eirmod singulis torquatos ne qui. Exerci consul regione vel in, mel an congue
+        efficiantur, oblique nominavi laboramus id nec. Id est graecis consequat adolescens, nec
+        at sumo copiosae. Cu dolorum alienum his. Mea accusam omittam scaevola.
+    </string>
+
+    <!-- INPUT DIALOG -->
+    <string name="dialog_title">Add an item</string>
+    <string name="dialog_save">SAVE</string>
+    <string name="dialog_cancel">CANCEL</string>
+</resources>
