@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="decoded" type="id">zxing_decoded</item>
+    <item name="camera_preview" type="id">camera_preview</item>
+    <item name="bounding_view" type="id">bounding_view</item>
+    <item name="decode_failed" type="id">zxing_decode_failed</item>
+</resources>
