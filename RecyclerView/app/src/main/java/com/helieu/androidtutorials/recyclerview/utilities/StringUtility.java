@@ -1,5 +1,4 @@
 package com.helieu.androidtutorials.recyclerview.utilities;
-s
 
 public class StringUtility {
 
