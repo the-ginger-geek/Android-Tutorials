@@ -5,9 +5,11 @@ import android.content.Context;
 import android.view.View;
 import android.view.Window;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.helieu.androidtutorials.R;
 import com.helieu.androidtutorials.recyclerview.listeners.InputDialogCallback;
+import com.helieu.androidtutorials.recyclerview.utilities.StringUtility;
 
 /**
  * Created by Neil on 15/01/30.
@@ -42,8 +44,7 @@ public class InputDialog extends Dialog {
 
             switch (id) {
                 case R.id.saveButton:
-                    inputDialogCallback.inputText(getTextFromInput());
-                    dismiss();
+                    checkInput();
                     break;
                 case R.id.cancelButton:
                     dismiss();
@@ -51,4 +52,14 @@ public class InputDialog extends Dialog {
             }
         }
     };
+
+    private void checkInput() {
+        String text = getTextFromInput();
+        if (!StringUtility.isNull(text)) {
+            inputDialogCallback.inputText(text);
+            dismiss();
+        } else {
+            Toast.makeText(getContext(), "Please enter a valid value", Toast.LENGTH_SHORT).show();
+        }
+    }
 }

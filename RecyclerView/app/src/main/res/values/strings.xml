@@ -2,7 +2,7 @@
 <resources>
     <string name="app_about_title">About</string>
     <string name="app_version">Version 1.0</string>
-    <string name="app_about">This app was made to demonstrate android features and best practices to developers that need a easy accessible reference point.</string>
+    <string name="app_about">This app was made to demonstrate android features and best practices to developers that needs an easy accessible reference point.</string>
     <string name="app_name">RecyclerView</string>
 
     <string name="navigation_drawer_open">Open</string>
