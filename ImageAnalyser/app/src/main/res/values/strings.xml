@@ -3,4 +3,6 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="luminance">Brightest color</string>
+    <string name="density">Most dense color</string>
 </resources>

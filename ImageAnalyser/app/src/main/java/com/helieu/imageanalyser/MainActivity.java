@@ -2,17 +2,19 @@ package com.helieu.imageanalyser;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import com.helieu.imageanalyser.utility.ColorFinder;
+import com.helieu.imageanalyser.utility.PixelDensity;
 import com.helieu.imageanalyser.utility.ColorUtility;
 import com.helieu.imageanalyser.utility.FileUtility;
 import com.helieu.imageanalyser.utility.ImageUtility;
-
+import com.helieu.imageanalyser.utility.PixelLuminance;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -46,21 +48,46 @@ public class MainActivity extends ActionBarActivity {
     private void processImage(String path) {
         Bitmap bitmap = ImageUtility.loadStandardBitmapFromPath(path);
         if (bitmap != null) {
-            new ColorFinder(new ColorFinder.CallbackInterface() {
-                @Override
-                public void onCompleted(String hexColor) {
-                    String colorName = ColorUtility.getColorName(hexColor);
-                    Toast.makeText(MainActivity.this, "Most dominant color name[hex : "+hexColor+"] - " + colorName, Toast.LENGTH_LONG).show();
-                }
-            }).findDominantColor(bitmap);
+            getPixelDensity(bitmap);
+
+            getPixelLuminance(bitmap);
         }
 
         ((ImageView) findViewById(R.id.content)).setImageBitmap(bitmap);
     }
 
-    /**
-     * Starts the image chooser
-     */
+    private void getPixelDensity(Bitmap bitmap) {
+        new PixelDensity(new PixelDensity.CallbackInterface() {
+            @Override
+            public void onCompleted(String hexColor) {
+                setDensity(hexColor);
+            }
+        }).findDominantColor(bitmap);
+    }
+
+    private void getPixelLuminance(Bitmap bitmap) {
+        new PixelLuminance(new PixelLuminance.CallbackInterface() {
+            @Override
+            public void onCompleted(String hexColor) {
+                setLuminance(hexColor);
+            }
+        }).findDominantColor(bitmap);
+    }
+
+    private void setLuminance(String hexColor) {
+        int color = Color.parseColor(hexColor);
+        findViewById(R.id.luminance).setBackgroundColor(color);
+        ((TextView)findViewById(R.id.luminanceText)).setTextColor(ColorUtility.getOptimizedTextColor(color, 0f));
+        ((TextView)findViewById(R.id.luminanceText)).setText("Brightest Pixel Color\n" + hexColor);
+    }
+
+    private void setDensity(String hexColor) {
+        int color = Color.parseColor(hexColor);
+        findViewById(R.id.density).setBackgroundColor(Color.parseColor(hexColor));
+        ((TextView)findViewById(R.id.densityText)).setTextColor(ColorUtility.getOptimizedTextColor(color, 0f));
+        ((TextView)findViewById(R.id.densityText)).setText("Densest Pixel Color\n" + hexColor);
+    }
+
     private void dispatchPickIntent() {
         Intent intent = new Intent();
         intent.setType("image/*");

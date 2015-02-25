@@ -10,14 +10,14 @@ import java.util.Map;
 /**
  * Created by Neil on 15/02/23.
  */
-public class ColorFinder {
-    private static final String TAG = ColorFinder.class.getSimpleName();
+public class PixelDensity {
+    private static final String TAG = PixelDensity.class.getSimpleName();
     private static final int ACCEPT_DIFFERENTIAL_THRESHOLD = 40;
     private static final int REJECT_DIFFERENTIAL_THRESHOLD = 100;
 
     private CallbackInterface callback;
 
-    public ColorFinder(CallbackInterface callback) {
+    public PixelDensity(CallbackInterface callback) {
         this.callback = callback;
     }
 
@@ -30,7 +30,7 @@ public class ColorFinder {
         int [] pixels = new int[resizedBitmap.getWidth()*resizedBitmap.getHeight()];
         resizedBitmap.getPixels(pixels,0,resizedBitmap.getWidth(),0,0, resizedBitmap.getWidth(), resizedBitmap.getHeight());
 
-        Map<Integer, PixelObject> pixelMap = refactorMapByPixelComparison(getMostDominantpixelMap(pixels));
+        Map<Integer, PixelObject> pixelMap = refactorMapByPixelComparison(getMostDominantPixelMap(pixels));
         return getDominantPixel(pixelMap);
     }
 
@@ -43,7 +43,7 @@ public class ColorFinder {
         return Bitmap.createScaledBitmap(image, resizedWidth, resizedHeight, true);
     }
 
-    private Map<Integer, PixelObject> getMostDominantpixelMap(int [] pixels) {
+    private Map<Integer, PixelObject> getMostDominantPixelMap(int [] pixels) {
         Map<Integer, PixelObject> pixelMap = new HashMap<>();
 
         for (int pixel : pixels) {
