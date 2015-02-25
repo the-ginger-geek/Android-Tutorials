@@ -17,8 +17,7 @@ import com.helieu.zxingscannerintegration.zxing.view.CameraPreviewView;
 /**
  * Capture activity (camera barcode activity)
  */
-public class CaptureActivity extends Activity {
-    public static String RESULT_IDENTIFIER;
+public class CaptureActivity extends Activity {public static String RESULT_IDENTIFIER;
 
     /**
      * Camera preview view
@@ -48,9 +47,9 @@ public class CaptureActivity extends Activity {
     private View getContentView() {
         RelativeLayout contentView = new RelativeLayout(this);
         contentView.setLayoutParams(new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT));
-        contentView.addView(getBoundingView());
-        contentView.addView(getCameraPreviewView());
 
+        contentView.addView(getCameraPreviewView());
+        contentView.addView(getBoundingView());
         return contentView;
     }
 
@@ -78,6 +77,7 @@ public class CaptureActivity extends Activity {
     private void initializeCamera() {
         // Create an instance of Camera
         cameraManager = new CameraManager();
+        cameraManager.setCameraDisplayOrientation(this);
         captureHandler = new CaptureHandler(cameraManager, new OnDecoded());
 
         //requesting next frame for decoding

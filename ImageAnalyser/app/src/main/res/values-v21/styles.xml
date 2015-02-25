@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
+        <item name="colorPrimary">@color/light_blue_200</item>
+        <item name="colorPrimaryDark">@color/light_blue_300</item>
+        <item name="colorAccent">@color/red_300</item>
+    </style>
+
+    <style name="AppTheme.MainActivity" parent="Theme.AppCompat.Light">
+        <item name="colorPrimary">@color/light_blue_200</item>
+        <item name="colorPrimaryDark">@color/light_blue_300</item>
+        <item name="colorAccent">@color/red_300</item>
+        <item name="windowActionBar">false</item>
+    </style>
+
+    <style name="AppTheme.ColorActivity" parent="Theme.AppCompat.Light">
+        <item name="colorPrimary">@color/light_blue_200</item>
+        <item name="colorPrimaryDark">@color/light_blue_300</item>
+        <item name="colorAccent">@color/red_300</item>
+        <item name="windowActionBar">false</item>
+    </style>
+</resources>

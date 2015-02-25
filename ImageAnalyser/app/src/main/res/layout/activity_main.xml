@@ -1,0 +1,27 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <ImageView
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitCenter"/>
+
+    <ImageView
+        android:id="@+id/openButton"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:src="@drawable/ic_open"
+        android:padding="15dp"
+        android:background="@drawable/ripple_background"
+        android:stateListAnimator="@anim/add_animator_drawable"
+        android:elevation="2dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="16dp"/>
+
+</RelativeLayout>

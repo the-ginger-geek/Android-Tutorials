@@ -43,12 +43,12 @@ public class BoundingView extends View {
         try {
 	        if (cameraManager != null) {
 	            Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
-	            paint.setStyle(Style.STROKE);
+	            paint.setStyle(Style.FILL);
 	            paint.setStrokeWidth(3);
-	            paint.setColor(Color.parseColor("#44000000"));
+	            paint.setColor(Color.parseColor("#44FF0000"));
 	            
 	            Rect boundingRect = cameraManager.getBoundingRect();
-//	            canvas.drawRect(boundingRect, paint);
+	            canvas.drawRect(boundingRect, paint);
 	        }
         } catch (Exception e) {
         	
