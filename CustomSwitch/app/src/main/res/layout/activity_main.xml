@@ -10,6 +10,7 @@
 
     <com.helieu.customswitch.widget.Switch
         xmlns:custom="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/customSwitch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         custom:leftSwitch="@string/left_switch"

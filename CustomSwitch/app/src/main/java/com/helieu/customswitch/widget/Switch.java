@@ -173,7 +173,7 @@ public class Switch extends LinearLayout {
         }
     };
 
-    private interface SwitchToggleListener {
+    public interface SwitchToggleListener {
         void onSwitchToggle(SwitchToggleState switchToggleState);
     }
 }
