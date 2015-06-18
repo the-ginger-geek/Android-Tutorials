@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="Switch">
+        <attr name="leftSwitch" format="string"/>
+        <attr name="rightSwitch" format="string"/>
+    </declare-styleable>
+</resources>

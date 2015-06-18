@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Custom Switch</string>
+
+    <string name="left_switch">Left</string>
+    <string name="right_switch">Right</string>
+</resources>
