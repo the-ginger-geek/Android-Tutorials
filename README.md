@@ -1,2 +1,2 @@
 # Android Examples
-This repo contains android tutorial projects that can downloaded and shared freely
+This repo contains android example projects that can downloaded and shared freely
